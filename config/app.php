@@ -18,6 +18,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'shortlink_domain' => env('SHORTLINK_DOMAIN', 'shortify.test'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
