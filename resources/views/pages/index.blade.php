@@ -14,7 +14,7 @@
             <span class="text-2xl font-bold">{{ config('app.name') }}</span>
             <div class="flex items-center space-x-4">
                 <a href="" class="text-gray-100 hover:text-white">Login</a>
-                <a href="" class="text-gray-100 hover:text-white">Register</a>
+                <a wire:navigate href="{{ route('register') }}" class="text-gray-100 hover:text-white">Register</a>
             </div>
         </nav>
         <div class="h-full flex flex-col items-center">
