@@ -21,6 +21,12 @@ class CreateShortlinkPublicForm extends Component
         $this->shortLink = $createShortLinkAction->execute($this->url);
     }
 
+    public function resetForm()
+    {
+        $this->url = null;
+        $this->shortLink = null;
+    }
+
     public function render()
     {
         return view('livewire.components.create-shortlink-public-form');
