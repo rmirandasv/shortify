@@ -1,10 +1,10 @@
 <div>
     @if (!$shortLink)
         <form class="mt-10 flex flex-col" wire:submit="submit" x-data="{ url: null }">
-            <label for="url" class="text-xl font-bold text-black">Enter your URL</label>
+            <label for="url" class="text-xl font-bold text-white">Enter your URL</label>
             <div class="flex items-center">
                 <input type="text" name="url" id="url" x-model="url" wire:model="url"
-                    class="mt-2 px-4 py-2 w-full rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent" />
+                    class="mt-2 px-4 py-2 w-full rounded-md bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent" />
 
                 <button type="submit" x-bind:disabled="!url"
                     class="ml-2 px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed">
@@ -27,7 +27,7 @@
                 <input type="text" name="url" id="url" value="{{ $shortLink->shortLink }}"
                     class="mt-2 px-4 py-2 w-full rounded-md text-white bg-gradient-to-r from-gray-600 to-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent" />
                 <button type="button"
-                    class="ml-2 px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
+                    class="ml-2 px-4 py-2 rounded-md bg-gray-900 text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
                     x-on:click="shortLink = $event.target.previousElementSibling.value; $event.target.previousElementSibling.select(); document.execCommand('copy'); $event.target.previousElementSibling.value = shortLink">
                     Copy
                 </button>
