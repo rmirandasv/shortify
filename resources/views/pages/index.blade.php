@@ -11,9 +11,9 @@
             @endguest
         </div>
     </nav>
-    <div class="h-full flex flex-col items-center">
-        <div class="mt-56 flex flex-col max-w-7xl mx-auto">
-            <h1 class="text-4xl font-bold text-white">
+    <div class="h-full flex flex-col items-center justify-cent">
+        <div class="mt-10 lg:mt-56 flex flex-col max-w-7xl mx-auto px-4">
+            <h1 class="text-4xl font-bold text-white text-center lg:text-start text-balance">
                 Shortify is an open source URL shortener.
             </h1>
             <livewire:components.create-shortlink-public-form />
