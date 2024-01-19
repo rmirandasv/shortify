@@ -9,5 +9,8 @@ middleware(['auth']);
 ?>
 
 <x-layouts.user>
-  <h1 class="text-2xl font-bold">Dashboard</h1>
+  <div class="flex flex-col">
+    <h1 class="text-3xl font-bold text-white mb-8">My short links</h1>
+    <livewire:components.shortlink.user-shortlink-crud />
+  </div>
 </x-layouts.user>
