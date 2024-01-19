@@ -9,6 +9,7 @@ use Livewire\Component;
 class UserShortlinkCrud extends Component
 {
     public bool $showForm = false;
+    public ?ShortLink $shortlink = null;
     public $url;
 
     public function save()
@@ -17,10 +18,30 @@ class UserShortlinkCrud extends Component
             'url' => 'required|url'
         ]);
 
+        if ($this->shortlink) {
+            $this->shortlink->update([
+                'url' => $this->url
+            ]);
+            $this->shortlink = null;
+            $this->showForm = false;
+            return;
+        }
+
         $createShortLink = new CreateShortLink();
         $createShortLink->execute($this->url, auth()->user()->id);
         $this->url = null;
-        $this->showForm = false;
+    }
+
+    public function edit(ShortLink $shortlink)
+    {
+        $this->shortlink = $shortlink;
+        $this->url = $shortlink->url;
+        $this->showForm = true;
+    }
+
+    public function delete(ShortLink $shortlink)
+    {
+        $shortlink->delete();
     }
 
     public function render()
