@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Components;
 
-use App\Actions\Shortify\CreateShortLink;
+use App\Actions\CreateShortLink;
 use App\Models\ShortLink;
 use Livewire\Component;
 

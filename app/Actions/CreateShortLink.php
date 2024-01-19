@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\Shortify;
+namespace App\Actions;
 
 use App\Models\ShortLink;
 
