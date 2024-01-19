@@ -17,3 +17,8 @@ Route::domain(config('app.shortlink_domain'))->group(function () {
     Route::get('/{code}', \App\Http\Controllers\ShortLinkController::class)
         ->name('shortlink.redirect');
 });
+
+Route::get('/logout', function () {
+    auth()->logout();
+    return redirect('/');
+})->name('logout');

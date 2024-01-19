@@ -2,5 +2,6 @@
     <span class="text-2xl font-bold">{{ config('app.name') }}</span>
     <div class="flex items-center space-x-3">
         <span class="text-sm font-bold text-white">{{ auth()->user()->name }}</span>
+        <a href="{{ route('logout') }}" class="text-sm font-bold text-white hover:underline">Logout</a>
     </div>
 </nav>
