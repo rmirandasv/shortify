@@ -8,6 +8,6 @@ middleware(['auth']);
 
 ?>
 
-<x-layouts.app>
+<x-layouts.user>
   <h1 class="text-2xl font-bold">Dashboard</h1>
-</x-layouts.app>
+</x-layouts.user>
