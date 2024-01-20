@@ -1,4 +1,4 @@
-<div class="w-full flex flex-col" x-data="{ showForm: @entangle('showForm') }">
+<div class="w-full flex flex-col" x-data="{ showForm: @entangle('showForm') }" wire:poll.60s>
     <div class="p-4 bg-white rounded-md flex flex-col" x-show="showForm">
         <h2 class="text-gray-800 font-bold">{{ $shortlink ? 'Edit short link' : 'Create short link' }}</h2>
         <form wire:submit.prevent="save" class="flex flex-col">
@@ -36,6 +36,7 @@
                 <tr>
                     <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base table-cell">Short Link</th>
                     <th class="text-left px-4 py-1 text-gray-800 text-base hidden lg:table-cell">Long Link</th>
+                    <th class="text-left px-4 py-1 text-gray-800 text-base hidden lg:table-cell">Visits</th>
                     <th class="text-left px-4 py-1 text-gray-800 text-base hidden lg:table-cell">Created At</th>
                     <th class="text-left px-4 py-1 text-gray-800 text-base hidden lg:table-cell">Updated At</th>
                     <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base table-cell">Actions</th>
@@ -62,6 +63,9 @@
                         </td>
                         <td class="px-4 py-2 text-gray-600 text-sm truncate hidden lg:table-cell">
                             {{ $shortlink->url }}
+                        </td>
+                        <td class="px-4 py-2 text-gray-600 text-sm truncate hidden lg:table-cell">
+                            {{ $shortlink->visits_count }}
                         </td>
                         <td class="px-4 py-2 text-gray-600 text-sm hidden lg:table-cell">{{ $shortlink->created_at->diffForHumans() }}</td>
                         <td class="px-4 py-2 text-gray-600 text-sm hidden lg:table-cell">{{ $shortlink->updated_at->diffForHumans() }}</td>

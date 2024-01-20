@@ -4,6 +4,7 @@ namespace App\Livewire\Components\Shortlink;
 
 use App\Actions\CreateShortLink;
 use App\Models\ShortLink;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class UserShortlinkCrud extends Component
@@ -37,16 +38,19 @@ class UserShortlinkCrud extends Component
         $this->shortlink = $shortlink;
         $this->url = $shortlink->url;
         $this->showForm = true;
+        Cache::forget("shortlink.{$shortlink->code}");
     }
 
     public function delete(ShortLink $shortlink)
     {
         $shortlink->delete();
+        Cache::forget("shortlink.{$shortlink->code}");
     }
 
     public function render()
     {
         $shortlinks = ShortLink::ofUser(auth()->user())
+            ->withCount('visits')
             ->orderBy('created_at', 'desc')
             ->paginate(10);
         return view('livewire.components.shortlink.user-shortlink-crud', compact('shortlinks'));

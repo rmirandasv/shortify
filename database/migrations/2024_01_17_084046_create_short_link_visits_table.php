@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('user_agent')->nullable();
             $table->string('browser')->nullable();
             $table->string('platform')->nullable();
+            $table->string('device_family')->nullable();
             $table->string('device')->nullable();
             $table->string('device_type')->nullable();
             $table->timestamps();

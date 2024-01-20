@@ -1,5 +1,6 @@
 <?php
 
+use DeviceDetector\Parser\Client\Browser;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
