@@ -1,6 +1,12 @@
 <div class="w-full p-4 flex flex-col bg-white rounded-md shadow">
     <p class="text-2xl font-bold text-gray-800 ">Log In</p>
     <p class="text-gray-600 mb-4 text-xs">Log in to your account to save your links and get access to your dashboard.</p>
+    <div clsss="flex flex-col">
+        <div class="flex justify-center">
+            <a href="{{ route('login.google') }}" class="px-4 py-2 border border-gray-400 bg-gray-100 hover:bg-gray-300 text-gray-800 rounded-md">
+                Log in with Google
+            </a>
+        </div>
     <form class="flex flex-col space-y-4" wire:submit="login">
         <div class="flex flex-col space-y-1">
             <label for="email" class="text-sm font-medium text-gray-700">Email</label>
