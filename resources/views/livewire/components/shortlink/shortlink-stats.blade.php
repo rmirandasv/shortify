@@ -1,31 +1,36 @@
 <idv class="flex flex-col">
-    <div class="flex flex-col overflow-x-auto">
-        <table class="table-auto w-full rounded-t-md border bg-white">
-            <thead class="bg-gray-300 rounded-t-md">
+    <div class="flex flex-col overflow-x-auto rounded-md shadow-slate-700 shadow">
+        <table class="min-w-full divide-y divide-gray-300">
+            <thead class="bg-gray-50">
                 <tr>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">IP</th>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">Platform</th>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">Browser</th>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">Device Family</th>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">Device</th>
-                    <th class="text-left px-1 lg:px-4 py-1 text-gray-800 text-base">Device type</th>
+                    <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">IP</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Platform</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Browser</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Device Family</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Device</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Device type</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="divide-y divide-gray-200 bg-white">
+                @if ($visits->isEmpty())
+                    <tr>
+                        <td class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6" colspan="6">No visits found</td>
+                    </tr>
+                @endif
                 @foreach ($visits as $visit)
                     <tr>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->ip }}</td>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->platform }}</td>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->browser }}</td>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->device_family }}</td>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->device }}</td>
-                        <td class="px-1 lg:px-4 py-2 text-sm text-gray-600">{{ $visit->device_type }}</td>
+                        <td class="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $visit->ip }}</td>
+                        <td class="px-3 py-4 text-gray-600 text-sm">{{ $visit->platform }}</td>
+                        <td class="px-3 py-4 text-gray-600 text-sm">{{ $visit->browser }}</td>
+                        <td class="px-3 py-4 text-gray-600 text-sm">{{ $visit->device_family }}</td>
+                        <td class="px-3 py-4 text-gray-600 text-sm">{{ $visit->device }}</td>
+                        <td class="px-3 py-4 text-gray-600 text-sm">{{ $visit->device_type }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    <div class="flex justify-end bg-white rounded-b-md">
+    <div class="mt-4">
         {{ $visits->links() }}
     </div>
 </idv>

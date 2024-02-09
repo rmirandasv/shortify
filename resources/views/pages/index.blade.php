@@ -12,7 +12,7 @@
         </div>
     </nav>
     <div class="h-full flex flex-col items-center justify-center">
-        <div class="flex flex-col w-full py-36 bg-gradient-to-tr from-bg-gray-330 to-gray-800">
+        <div class="flex flex-col w-full pt-36">
             <div class="flex flex-col max-w-7xl mx-auto px-4">
                 <h1 class="text-4xl font-bold text-white text-center lg:text-start text-balance mb-4">
                     Shortify is an open source URL shortener.
@@ -20,7 +20,7 @@
                 <livewire:components.create-shortlink-public-form />
             </div>
         </div>
-        <div class="mt-10 w-full relative pt-6 flex flex-col">
+        <div class="mt-16 w-full relative pt-6 flex flex-col">
             <div class="flex flex-col items-center px-4 lg:px-0">
                 <span class="text-xl font-bold text-blue-300 text-center lg:text-start text-balance">
                     Fastest way to shorten your links.
