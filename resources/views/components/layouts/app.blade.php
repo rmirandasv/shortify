@@ -15,7 +15,7 @@
     <div class="min-h-screen flex flex-col">
         {{ $slot }}
     </div>
-    <footer class="mt-10 flex justify-center py-3">
+    <footer class="flex justify-center py-10 bg-slate-900">
         <div class="mt-auto px-4 lg:px-10 flex justify-center items-center bg-transparent">
             <span class="text-gray-50">Made with ❤️ by <a href="" class="text-gray-50 hover:text-white">Ronald Miranda</a></span>
         </div>
