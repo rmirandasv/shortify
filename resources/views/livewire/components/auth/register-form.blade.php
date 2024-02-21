@@ -47,7 +47,7 @@
         </div>
     </form>
     <div class="mt-4 flex flex-col space-y-1 items-center">
-        <a href="{{ route('login') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+        <a wire:navigate href="{{ route('login') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
             Already have an account? Log In
         </a>
     </div>
