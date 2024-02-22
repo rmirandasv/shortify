@@ -19,7 +19,6 @@ name('home');
                 <a wire:navigate href="{{ route('register') }}"
                     class="px-4 py-2 bg-white text-black rounded-lg uppercase">Register</a>
             @endguest
-            {{-- github link --}}
             <a target="_blank" href="https://github.com/rmirandasv/shortify" class="text-gray-100 hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
                     viewBox="0 0 30 30">
