@@ -3,6 +3,7 @@
 namespace App\Actions;
 
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterUser
@@ -20,10 +21,14 @@ class RegisterUser
             'password' => 'required|min:6|confirmed'
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $name,
             'email' => $email,
             'password' => bcrypt($password),
         ]);
+
+        event(new Registered($user));
+
+        return $user;
     }
 }

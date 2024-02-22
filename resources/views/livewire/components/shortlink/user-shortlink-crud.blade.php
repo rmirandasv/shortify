@@ -49,7 +49,7 @@
             <tbody class="divide-y divide-gray-200 bg-white">
                 @if (count($shortlinks) === 0)
                     <tr>
-                        <td class="border px-4 py-2 text-gray-800" colspan="5">No short links found.</td>
+                        <td class="border px-4 py-2 text-gray-800" colspan="6">No short links found.</td>
                     </tr>
                 @endif
                 @foreach($shortlinks as $shortlink)
