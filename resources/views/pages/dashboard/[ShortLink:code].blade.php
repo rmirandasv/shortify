@@ -8,7 +8,7 @@ use function Laravel\Folio\middleware;
 use function Laravel\Folio\render;
 
 name('dashboard.shortlink');
-middleware(['auth']);
+middleware(['auth', 'verified']);
 
 render(function (View $view, ShortLink $shortLink) {
     if (auth()->user()->id !== $shortLink->user_id) {

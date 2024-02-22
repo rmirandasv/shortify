@@ -4,7 +4,7 @@ use function Laravel\Folio\{name};
 use function Laravel\Folio\{middleware};
 
 name('dashboard');
-middleware(['auth']);
+middleware(['auth', 'verified']);
 
 ?>
 

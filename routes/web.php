@@ -12,6 +12,7 @@
 */
 
 use App\Models\User;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -37,13 +38,24 @@ Route::get('/auth/callback', function () {
             'google_refresh_token' => $googleUser->refreshToken,
         ]
     );
+
+    if ($user->email_verified_at === null) {
+        $user->email_verified_at = now();
+        $user->save();
+    }
  
     Auth::login($user);
  
     return redirect('/dashboard');
 })->name('login.google.callback');
 
-Route::get('/logout', function () {
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/logout', function () {
     auth()->logout();
     return redirect('/');
 })->name('logout');
