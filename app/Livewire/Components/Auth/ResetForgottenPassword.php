@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Components\Auth;
 
+use App\Events\PasswordReset;
 use Illuminate\Support\Facades\Password;
 use Livewire\Component;
 
@@ -11,6 +12,7 @@ class ResetForgottenPassword extends Component
     public $email;
     public $password;
     public $password_confirmation;
+    public $passwordReseted = false;
 
     public function mount($token)
     {
@@ -29,12 +31,11 @@ class ResetForgottenPassword extends Component
                 'password' => bcrypt($password)
             ])->save();
 
-            // send email to user with event(new PasswordReset($user));
+            event(new PasswordReset($user));
         });
 
         if ($status == Password::PASSWORD_RESET) {
-            session()->flash('success', 'Password reset successfully');
-            return $this->redirectRoute('login', navigate: true);
+            $this->passwordReseted = true;
         } else {
             $this->addError('email', __($status));
         }
