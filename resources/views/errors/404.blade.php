@@ -9,11 +9,7 @@
                   <h1 class="text-9xl font-bold text-gray-50">404</h1>
                   <h2 class="text-4xl font-bold text-gray-50">Page not found</h2>
                 </div>
-                @auth
-                    <a href="{{ route('dashboard') }}" class="text-gray-50 hover:text-white">Go back to dashboard</a>
-                @else
-                    <a href="{{ route('home') }}" class="text-gray-50 hover:text-white">Go back to home</a>
-                @endauth
+                <a href="{{ route('home') }}" class="text-gray-50 hover:text-white">Go back to home</a>
             </div>
         </div>
     </div>
