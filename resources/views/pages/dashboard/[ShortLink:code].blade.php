@@ -26,9 +26,9 @@ render(function (View $view, ShortLink $shortLink) {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                 </svg>
             </a>
-            <h1 class="text-3xl font-bold text-white">{{ $shortLink->shortLink }}</h1>
+            <h1 class="text-xl lg:text-2xl whitespace-wrap font-bold text-white">{{ $shortLink->shortLink }}</h1>
         </div>
-        <span class="text-white mb-4">{{ $shortLink->url }}</span>
+        <textarea class="py-2 w-full bg-transparent -none text-white" readonly>{{ $shortLink->url }}</textarea>
         <h2 class="text-xl font-bold text-white mb-4">
             Total visits: {{ $shortLink->visits->count() }}
         </h2>

@@ -37,10 +37,10 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 table-cell">Short Link</th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:table-cell">Long Link</th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:table-cell">Visits</th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:table-cell">Created At</th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 lg:table-cell">Updated At</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 hidden lg:table-cell">Long Link</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 hidden lg:table-cell">Visits</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 hidden lg:table-cell">Created At</th>
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:pl-6 hidden lg:table-cell">Updated At</th>
                     <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
                         <span class="sr-only">Edit</span>
                     </th>
