@@ -1,5 +1,5 @@
 <footer class="bg-transparent">
-    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+    <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 flex flex-col items-center">
         <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
             <div class="pb-6">
                 <a wire:navigate href="{{ route('home') }}" class="text-sm leading-6 text-gray-300 hover:text-white">Home</a>
