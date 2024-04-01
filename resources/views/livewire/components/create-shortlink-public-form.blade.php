@@ -12,7 +12,7 @@
                 </button>
             </div>
             @error('url')
-                <span class="text-red-500 text-sm">{{ $message }}</span>
+                <span class="text-red-700 text-sm font-bold">{{ $message }}</span>
             @enderror
         </form>
     @endif
@@ -24,11 +24,11 @@
                 <span class="text-green-500 text-sm" x-show="shortLink">Copied!</span>
             </div>
             <div class="flex items-end">
-                <input type="text" name="url" id="url" value="{{ $shortLink->shortLink }}"
+                <input type="text" name="url" id="url" value="{{ $shortLink->shortLink }}" x-ref="shortLinkInput"
                     class="mt-2 px-4 py-2 w-full rounded-md text-white bg-gradient-to-r from-gray-600 to-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent" />
                 <button type="button"
                     class="ml-2 px-4 py-2 flex items-center space-x-1 rounded-md bg-gray-900 text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent"
-                    x-on:click="shortLink = $event.target.previousElementSibling.value; $event.target.previousElementSibling.select(); document.execCommand('copy'); $event.target.previousElementSibling.value = shortLink">
+                    x-on:click="$refs.shortLinkInput.select(); document.execCommand('copy'); shortLink = true;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
