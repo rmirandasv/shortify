@@ -22,23 +22,6 @@ services:
             - '.:/var/www/html'
         networks:
             - shortify
-        depends_on:
-            - redis
-    redis:
-        image: 'redis:alpine'
-        ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
-        volumes:
-            - 'shortify-redis:/data'
-        networks:
-            - shortify
-        healthcheck:
-            test:
-                - CMD
-                - redis-cli
-                - ping
-            retries: 3
-            timeout: 5s
 networks:
     shortify:
         driver: bridge
